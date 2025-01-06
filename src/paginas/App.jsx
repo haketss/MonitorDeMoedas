@@ -27,7 +27,7 @@ export function Principal() {
       <div className="min-vh-100 bg-light">
         <div className="container py-4">
           <div className="row g-4">
-            <div className="col-md-4">
+            <div className="col-md-4 invisible">
              </div>
             <div className="col-md-4">
             <h2 className="text-xl font-semibold text-center">Moedas</h2>
