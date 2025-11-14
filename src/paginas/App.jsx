@@ -1,9 +1,11 @@
-import { CurrencyColumn } from "../componentes/CurrencyColumn";
+import { CurrencyColumnDolar } from "../componentes/CurrencyColumnDolar";
+import { CurrencyColumnReal } from "../componentes/CurrencyColumnReal";
 import { CurrencyColumnBTC } from "../componentes/CurrencyColumnBTC";
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 export function Principal() {
-  
+
+  // eslint-disable-next-line react/prop-types
   function AtualizarComponente({ Componente }) {
     const [contador, setContador] = useState(0);
 
@@ -18,37 +20,18 @@ export function Principal() {
     return <Componente contador={contador} />;
   }
 
-  function ComponenteExemplo({ contador }) {
-    return <p className="text-center">atualização em tempo real: {contador}</p>;
-  }
+
 
   return (
-    <div className="container">
-      <div className="min-vh-100 bg-light">
-        <div className="container py-4">
-          <div className="row g-4">
-            <div className="col-md-4 invisible">
-             </div>
-            <div className="col-md-4">
-            <h2 className="text-xl font-semibold text-center">Moedas</h2>
-              <AtualizarComponente Componente={CurrencyColumn} />
-             <h2 className="text-xl font-semibold text-center">Criptomoedas</h2>
-              <AtualizarComponente Componente={CurrencyColumnBTC} />
-            </div>
-            <div className="col-md-4">
-            </div>
-          </div>
-        </div>
+    <div>
+      <div className="container mx-auto  mt-6 text-center flex justify-around">
+
+
+        <AtualizarComponente Componente={CurrencyColumnDolar} />
+        <AtualizarComponente Componente={CurrencyColumnReal} />
+        <AtualizarComponente Componente={CurrencyColumnBTC} />
+
       </div>
     </div>
   );
 }
-
-
-
-
-
-
-
-
-

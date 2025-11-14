@@ -1,36 +1,35 @@
 
 import { CurrencyCard } from './CurrencyCard';
 import { useEffect, useState } from "react";
-import { getCripMoeda } from "../services/moeda-service";
+import { getMoedaDolar } from "../services/moeda-service";
 
-export function CurrencyColumnBTC() {
-  const [cotacaoBtc, setContacaoBtc] = useState([]);
-
+export function CurrencyColumnDolar() {
+  const [cotacao, setContacao] = useState([]);
+  
   useEffect(() => {
-    buscarCotacaoBtc();
+    buscarCotacao();
+   
   }, []);
 
-
-  async function buscarCotacaoBtc() {
+  async function buscarCotacao() {
     try {
-      const result = await getCripMoeda();
+      const result = await getMoedaDolar();
        // Verifique se os dados estão corretos aqui
       // Ajuste esta linha para garantir que você está definindo o estado corretamente
-      setContacaoBtc(Object.values(result.data));
+      setContacao(Object.values(result.data));
     } catch (error) {
       console.error(error);
     }
   }
 
+
   return (
-    <div className="">
-      <h2 className=""></h2>
+    <div className="text-center">
       <div className="">
-        {cotacaoBtc.map((currency) => (
+        {cotacao.map((currency) => (
           <CurrencyCard key={currency.code} currency={currency} />
         ))}
       </div>
-
     </div>
   );
 }
