@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-
 export function CurrencyCard({ currency }) {
 	const isPositive = currency.pctChange > 0;
 	const isBTC = currency.code != "BTC";
@@ -12,8 +11,7 @@ export function CurrencyCard({ currency }) {
 
 	return (
 		<div
-			className={`rounded-xl flex justify-around gap-4 text-2xl p-8 ${isPositive ? "text-green-500/70 bg-gray-400/10" : "text-red-500/70 bg-gray-400/10"} m-2 `}
-		>
+			className={`rounded-xl flex justify-around gap-4 text-2xl p-8 ${isPositive ? "text-green-500/70 bg-gray-400/10" : "text-red-500/70 bg-gray-400/10"} m-2 `}>
 			<div>
 				<p className="truncate w-60">{currency.name}</p>
 			</div>
