@@ -1,6 +1,6 @@
-import { CurrencyCard } from "./CurrencyCard";
 import { useEffect, useState } from "react";
 import { getMoedaReal } from "../services/moeda-service";
+import { CurrencyCard } from "./CurrencyCard";
 
 export function CurrencyColumnReal() {
 	const [cotacao, setContacao] = useState([]);
