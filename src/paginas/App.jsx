@@ -12,7 +12,7 @@ export function Principal() {
 		useEffect(() => {
 			const timer = setTimeout(() => {
 				setContador((contadorAnterior) => contadorAnterior + 1);
-			}, 5000); // Atualiza a cada segundo
+			}, 50000); // Atualiza a cada segundo
 
 			return () => clearTimeout(timer); // Limpa o timeout ao desmontar
 		}, [contador]);
@@ -25,7 +25,7 @@ export function Principal() {
 			<div className="container mx-auto  mt-10 ">
 				<div>
 					<CurrencyCardValor />
-					<h1 className="text-1xl font-bold text-end me-5  text-gray-500/50">
+					<h1 className="text-1xl font-bold text-end mt-2 text-gray-500/50">
 						Atualiza a cada 5(cinco) segundos
 					</h1>
 				</div>
