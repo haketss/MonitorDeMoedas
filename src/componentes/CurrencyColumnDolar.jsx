@@ -20,6 +20,16 @@ export function CurrencyColumnDolar() {
     }
   }
 
+  function FarmatoDeNumero() {
+	
+    const valorFormatato = new Intl.NumberFormat("pt-BR", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+
+    return valorFormatato.format(cotacao);
+  }
+
   return (
     <div className="">
       <div className="">
