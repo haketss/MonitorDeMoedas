@@ -10,12 +10,12 @@ export function Principal() {
 		const [contador, setContador] = useState(0);
 		console.log("Renderizando Principal");
 		useEffect(() => {
-			const timer = setTimeout(() => {
+			const interval = setInterval(() => {
 				setContador((contadorAnterior) => contadorAnterior + 1);
-			}, 50000); // Atualiza a cada segundo
+			}, 50000); // Atualiza a cada 50 segundos
 
-			return () => clearTimeout(timer); // Limpa o timeout ao desmontar
-		}, [contador]);
+			return () => clearInterval(interval); // Limpa o intervalo ao desmontar
+		}, []);
 
 		return <Componente contador={contador} />;
 	}
